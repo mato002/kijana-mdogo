@@ -1,0 +1,48 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: auto;
+}
+.box{
+    position: absolute;
+    background-color: fuchsia;
+    width: 300px;
+    height: 400px;
+    background: linear-gradient(blue,transparent,red);
+}
+form{
+    display: block;
+    position: relative;
+}
+.box::before{
+    content: '';
+    border-radius: 6px;
+    top: -50%;
+    left: -50%;
+    position: relative;
+    transform-origin: top, right;
+    width: 300px;
+    height: 400px;
+    animation: 6s animate;
+}
+.box::after{
+    content: '';
+    border-radius: 6px;
+    top: -50%;
+    left: -50%;
+    position: relative;
+    transform-origin: top, right;
+    width: 300px;
+    height: 400px;
+    animation: 6s animate;
+}
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
